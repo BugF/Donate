@@ -73,7 +73,7 @@ function UnionPayCoupon() {
   return <div id="UnionPayCoupon" align="center">
       <Title level={3}>云闪付红包</Title><br/>
       <QRCodeReact renderAs="svg" size="200" value="https://wallet.95516.com/s/wl/webV3/activity/vMarketing2/html/snsIndex.html?r=725aba45364e6cf48c6b044fb9069197" /><br/><br/>
-      <Button type="primary" href="https://qr.alipay.com/tsx0030028m0ppqbhreqs8e" target="_blank" >点击领取</Button>
+      <Button type="primary" href="https://wallet.95516.com/s/wl/webV3/activity/vMarketing2/html/snsIndex.html?r=725aba45364e6cf48c6b044fb9069197" target="_blank" >点击领取</Button>
   </div>;
 }
 
@@ -98,7 +98,7 @@ function NoMatch({ location }) {
         closable  /><br/>
     <Title level={3}>赞助与付款</Title><br/>
     <Text>感谢您的支持。</Text><br/><br/>
-    <Text>目前接受的付款方式有 支付宝，<Text delete>微信</Text>，银联云闪付</Text><br/><br/>
+    <Text>目前接受的付款方式有 支付宝，<Text delete>微信</Text>和银联云闪付</Text><br/><br/>
     <Text>赞助列表将展示在此处  <Button href="https://uv.uy/s/donate" target="_blank" >点击前往</Button></Text><br/><br/>
     <Text>金额小于1元人民币的交易信息将不会记录。</Text><br/><br/>
     <Text>很难准时更新，但是我会尽可能避免遗漏。</Text>
