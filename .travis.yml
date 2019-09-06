@@ -11,7 +11,6 @@ before_script:
 
 script:
   - yarn build
-  - npm run deploy
   
 deploy:
 - provider: pages
