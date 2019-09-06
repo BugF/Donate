@@ -20,6 +20,6 @@ deploy:
   keep-history: true
   email: ${GitHubEmail}
   name: ${GitHubName}
-  local-dir: ./build
+  local-dir: build
   on:
     branch: master
