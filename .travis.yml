@@ -10,7 +10,7 @@ before_script:
   - yarn install
 
 script:
-  - yarn build
+  - CI=false yarn build
   
 deploy:
 - provider: pages
