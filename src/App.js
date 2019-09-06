@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import { Layout, Typography, Button } from 'antd';
+import { Layout, Typography, Button, Alert } from 'antd';
 
 import Headers from './Header'
 import QRCodeReact from 'qrcode.react'
@@ -16,12 +16,15 @@ function App() {
         <Headers/>
         <Layout>
           <Layout style={{ padding: "24px" }}>
+            <Switch>
               <Route path="/" exact component={Index} />
               <Route path="/Alipay" component={Alipay} />
               <Route path="/AlipayCoupon" component={AlipayCoupon} />
               <Route path="/WeChatPay" component={WeChatPay} />
               <Route path="/UnionPayCoupon" component={UnionPayCoupon} />
               <Route path="/UnionPay" component={UnionPay} />
+              <Route component={NoMatch} />
+            </Switch>
           </Layout>
         </Layout>
         <Footer style={{ textAlign: 'center' }}>Copyright © 2015 - 2019 <a href="https://uv.uy" target="_blank" rel="external noopener noreferrer">Edison Jwa</a>. All rights reserved.</Footer>
@@ -80,4 +83,25 @@ function UnionPay() {
       <QRCodeReact renderAs="svg" size="200" value="https://qr.95516.com/00010002/01012123571890753265718637730182" /><br/><br/>
       <Text>打开云闪付App、银行App<br/>和热门App的首页扫码功能轻松支付</Text>
   </div>;
+}
+
+function NoMatch({ location }) {
+  
+  let errorMessage = "找不到请求的URL " + location.pathname;
+
+  return (
+    <div id="Index" align="center">
+    <Alert
+        message="错误"
+        description={errorMessage}
+        type="error"
+        closable  /><br/>
+    <Title level={3}>赞助与付款</Title><br/>
+    <Text>感谢您的支持。</Text><br/><br/>
+    <Text>目前接受的付款方式有 支付宝，<Text delete>微信</Text>，银联云闪付</Text><br/><br/>
+    <Text>赞助列表将展示在此处  <Button href="https://uv.uy/s/donate" target="_blank" >点击前往</Button></Text><br/><br/>
+    <Text>金额小于1元人民币的交易信息将不会记录。</Text><br/><br/>
+    <Text>很难准时更新，但是我会尽可能避免遗漏。</Text>
+  </div>
+  );
 }
