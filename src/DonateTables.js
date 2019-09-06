@@ -10,7 +10,7 @@ function DonateTables() {
     
     return (
         <div class="donateList">
-        <Table dataSource={donateData} columnWidth="10px" size="small">
+        <Table dataSource={donateData} columnWidth="10px">
             <Column title="昵称" dataIndex="nickname" key={donateData.nickname} align="center" />
             <Column title="金额" dataIndex="value" key={donateData.value} align="center" />
             <Column title="时间" dataIndex="date" key={donateData.date} align="center" />

@@ -11,25 +11,26 @@ const { Footer } = Layout;
 
 function App() {
   return (
-    <Router>
-      <Layout style={{ height: "100vh" }}>
-        <Headers />
-        <Layout>
-          <Layout style={{ padding: "24px" }}>
-            <Switch>
-              <Route path="/" exact component={Index} />
-              <Route path="/Alipay" component={Alipay} />
-              <Route path="/AlipayCoupon" component={AlipayCoupon} />
-              <Route path="/WeChatPay" component={WeChatPay} />
-              <Route path="/UnionPayCoupon" component={UnionPayCoupon} />
-              <Route path="/UnionPay" component={UnionPay} />
-              <Route component={NoMatch} />
-            </Switch>
+      <Layout style={{ minHeight:"100vh" }}>
+        <Router>
+          <Headers />
+          <Layout>
+            <Layout style={{ padding: "24px" }}>
+              <Switch>
+                <Route path="/" exact component={Index} />
+                <Route path="/Alipay" component={Alipay} />
+                <Route path="/AlipayCoupon" component={AlipayCoupon} />
+                <Route path="/WeChatPay" component={WeChatPay} />
+                <Route path="/UnionPayCoupon" component={UnionPayCoupon} />
+                <Route path="/UnionPay" component={UnionPay} />
+                <Route component={NoMatch} />
+              </Switch>
+            </Layout>
           </Layout>
-        </Layout>
+        </Router>
         <Footer style={{ textAlign: 'center' }}>Copyright © 2015 - 2019 <a href="https://uv.uy" target="_blank" rel="external noopener noreferrer">Edison Jwa</a>. All rights reserved.</Footer>
       </Layout>
-    </Router>
+    
   );
 }
 
@@ -81,7 +82,7 @@ function UnionPayCoupon() {
 
 function UnionPay() {
   return <div id="UnionPay" align="center">
-    <Title level={3}> 云闪付付款</Title>
+    <Title level={3}> 云闪付付款</Title><br />
     <QRCodeReact renderAs="svg" size="200" value="https://qr.95516.com/00010002/01012123571890753265718637730182" /><br /><br />
     <Text>打开云闪付App、银行App<br />和热门App的首页扫码功能轻松支付</Text>
   </div>;
