@@ -83,6 +83,12 @@ const donateData = [
         value: '5.00',
         date: '2019-02-23'
     },
+    {
+        key: '15',
+        nickname: 'Even Fox',
+        value: '1.00',
+        date: '2019-09-06'
+    }
 
 ];
 
