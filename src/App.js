@@ -105,12 +105,12 @@ function NoMatch({ location }) {
   let errorMessage = "找不到请求的URL " + location.pathname;
 
   return (
-    <div id="NoMatch" align="center">
+    <div id="NoMatch">
       <Alert
         message="错误"
         description={errorMessage}
         type="error"
-        closable /><br />
+        closable align="center"/><br />
         <Index />
     </div>
   );
