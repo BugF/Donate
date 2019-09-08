@@ -19,6 +19,7 @@ function App() {
               <Switch>
                 <Route path="/" exact component={Index} />
                 <Route path="/Alipay" component={Alipay} />
+                <Route path="/AlipayOrder" component={AlipayOrder} />
                 <Route path="/AlipayCoupon" component={AlipayCoupon} />
                 <Route path="/WeChatPay" component={WeChatPay} />
                 <Route path="/UnionPayCoupon" component={UnionPayCoupon} />
@@ -37,7 +38,8 @@ function App() {
 export default App;
 
 function Index() {
-  return <div id="Index" align="center">
+  return <div id="Index" >
+    <div align="center">
     <Title level={3}>赞助与付款</Title><br />
     <Text>感谢您的支持。</Text><br /><br />
     <Text>目前接受的付款方式有 支付宝，<Text delete>微信</Text>，银联云闪付</Text><br /><br />
@@ -45,7 +47,9 @@ function Index() {
     <Text>金额小于1元人民币的交易信息将不会记录。</Text><br /><br />
     <Text>很难准时更新，但是我会尽可能避免遗漏。</Text><br /><br />
     <Title level={4}>赞助列表</Title><br />
+    </div>
     <DonateTables />
+    
   </div>;
 }
 
@@ -54,6 +58,14 @@ function Alipay() {
     <Title level={3}>支付宝付款</Title><br />
     <QRCodeReact renderAs="svg" size="200" value="https://qr.alipay.com/tsx0030028m0ppqbhreqs8e" /><br /><br />
     <Button type="primary" href="https://qr.alipay.com/tsx0030028m0ppqbhreqs8e" target="_blank" >点击付款</Button>
+  </div>;
+}
+
+function AlipayOrder() {
+  return <div id="AlipayOrder" align="center">
+    <Title level={3}>支付宝点单</Title><br />
+    <QRCodeReact renderAs="svg" size='200' value="https://qr.alipay.com/00c01809qtt0c2uxrz4qp05" /><br /><br />
+    <Button type="primary" href="https://qr.alipay.com/00c01809qtt0c2uxrz4qp05" target="_blank" >点击下单</Button>
   </div>;
 }
 
@@ -93,18 +105,13 @@ function NoMatch({ location }) {
   let errorMessage = "找不到请求的URL " + location.pathname;
 
   return (
-    <div id="Index" align="center">
+    <div id="NoMatch" align="center">
       <Alert
         message="错误"
         description={errorMessage}
         type="error"
         closable /><br />
-      <Title level={3}>赞助与付款</Title><br />
-      <Text>感谢您的支持。</Text><br /><br />
-      <Text>目前接受的付款方式有 支付宝，<Text delete>微信</Text>和银联云闪付</Text><br /><br />
-      <Text>赞助列表将展示在此处  <Button href="https://uv.uy/s/donate" target="_blank" >点击前往</Button></Text><br /><br />
-      <Text>金额小于1元人民币的交易信息将不会记录。</Text><br /><br />
-      <Text>很难准时更新，但是我会尽可能避免遗漏。</Text>
+        <Index />
     </div>
   );
 }

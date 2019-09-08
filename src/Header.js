@@ -29,6 +29,8 @@ function Headers() {
           </Menu.Item>
           <Menu.Item key="Alipay:2" align="center">
             <NavLink to="/Alipay">支付宝付款</NavLink></Menu.Item>
+          <Menu.Item key="Alipay:3" align="center">
+            <NavLink to="/AlipayOrder">支付宝点单</NavLink></Menu.Item>
         </SubMenu>
         <Menu.Item key="2" disabled>
           <NavLink to="/WeChatPay">

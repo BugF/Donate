@@ -1,22 +1,40 @@
 import React from 'react'
 import donateData from './donateData'
 
-import { Table } from 'antd';
-const { Column } = Table;
+import { Timeline, Tooltip } from 'antd'
+import randomColor from 'randomcolor'
+import TimeAgo from 'timeago-react';
 
+class DonateTables extends React.Component {
+    state = {
+        isLoaded: false,
+      }
+    color = randomColor();
+    donateComponents = donateData.map(item =>  <Timeline.Item key={item.id} color= {randomColor({ luminosity: 'bright', hue: 'blue'})} ><Tooltip title={item.text} placement="topLeft" arrowPointAtCenter trigger="hover click"><strong>{item.nickname}</strong> 捐赠了 <strong>{item.value}</strong> <small><TimeAgo datetime={item.date} locale='zh_CN' /></small></Tooltip> </Timeline.Item>)
 
+    componentDidMount() {
+        fetch("https://api.lwl12.com/hitokoto/v1?encode=realjson")
+            .then(response => response.json())
+            .then(data => this.setState({ isLoaded: true, hitokotoData: data.text, hitokotoAuthor: data.author, hitokotoSource: data.source }))
+        }
+    render() {
+        
+        const { hitokotoData, hitokotoAuthor, hitokotoSource } = this.state
+        let hitokotoCombine
+        if (hitokotoAuthor || hitokotoSource){
+        hitokotoCombine = hitokotoData + " ——" + hitokotoAuthor + hitokotoSource }
+        else {
+            hitokotoCombine = hitokotoData
+        }
 
-function DonateTables() {
-    
-    return (
-        <div class="donateList">
-        <Table dataSource={donateData} columnWidth="10px">
-            <Column title="昵称" dataIndex="nickname" key={donateData.nickname} align="center" />
-            <Column title="金额" dataIndex="value" key={donateData.value} align="center" />
-            <Column title="时间" dataIndex="date" key={donateData.date} align="center" />
-        </Table>
-        </div>
-    );
+        return (
+            <div class="donateList">
+                <Timeline pending={hitokotoCombine} mode="alternate">
+                {this.donateComponents}
+                </Timeline>
+            </div>
+        )
+    }
 }
 
 export default DonateTables
