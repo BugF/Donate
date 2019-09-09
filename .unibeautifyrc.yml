@@ -1,0 +1,38 @@
+JSON:
+  beautifiers:
+    - Prettier
+    - Pretty Diff
+    - JS-Beautify
+  align_assignments: true
+  break_chained_methods: true
+JSX:
+  beautifiers:
+    - Prettier
+    - Pretty Diff
+    - JS-Beautify
+  align_assignments: !<tag:yaml.org,2002:js/undefined> ''
+  break_chained_methods: true
+  indent_comments: !<tag:yaml.org,2002:js/undefined> ''
+JavaScript:
+  beautifiers:
+    - Prettier
+    - Pretty Diff
+    - JS-Beautify
+    - ESLint
+  break_chained_methods: true
+  remove_trailing_whitespace: !<tag:yaml.org,2002:js/undefined> ''
+SVG:
+  beautifiers:
+    - Pretty Diff
+  align_assignments: true
+  break_chained_methods: true
+  indent_comments: true
+HTML:
+  beautifiers:
+    - Pretty Diff
+    - JS-Beautify
+  align_assignments: !<tag:yaml.org,2002:js/undefined> ''
+  break_chained_methods: true
+  indent_size: 4
+  newline_before_tags: []
+  wrap_attributes: auto
