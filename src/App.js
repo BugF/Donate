@@ -149,7 +149,11 @@ class NoMatch extends React.Component {
     };
     return (
       <div id="NoMatch" onAnimationStart={() => openNotificationWithIcon('error')}>
-
+      <Alert
+        message="错误"
+        description={errorMessage}
+        type="error"
+        closable align="center"/><br />
         <Index />
       </div>
     )

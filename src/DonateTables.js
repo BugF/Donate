@@ -10,7 +10,7 @@ class DonateTables extends React.Component {
         isLoaded: false,
       }
     color = randomColor();
-    donateComponents = donateData.map(item =>  <Timeline.Item key={item.key} color= {randomColor({ luminosity: 'bright', hue: 'blue'})} ><Tooltip title={item.text} placement="topLeft" arrowPointAtCenter trigger="hover click"><strong>{item.nickname}</strong> 捐赠了 <strong>{item.value}</strong> <br /><small><TimeAgo datetime={item.date} locale='zh_CN' /></small></Tooltip> </Timeline.Item>)
+    donateComponents = donateData.map(item =>  <Timeline.Item key={item.id} color= {randomColor({ luminosity: 'bright', hue: 'blue'})} ><Tooltip title={item.text} placement="topLeft" arrowPointAtCenter trigger="hover click"><strong>{item.nickname}</strong> 捐赠了 <strong>{item.value}</strong> <br /><small><TimeAgo datetime={item.date} locale='zh_CN' /></small></Tooltip> </Timeline.Item>)
 
     componentDidMount() {
         fetch("https://api.lwl12.com/hitokoto/v1?encode=realjson")
