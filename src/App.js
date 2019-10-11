@@ -5,9 +5,10 @@ import { Layout, Typography, Button, notification, Row, Col, Card } from 'antd';
 import Headers from './Header'
 import QRCode from 'qrcode.react'
 import DonateTables from './DonateTables'
-
+import Footers from './Footer'
+// eslint-disable-next-line
 const { Title, Text, Paragraph } = Typography;
-const { Footer } = Layout;
+
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           </Layout>
         </Layout>
       </Router>
-      <Footer style={{ textAlign: 'center' }}>Copyright © 2015 - 2019 <a href="https://uv.uy" target="_blank" rel="external noopener noreferrer">Edison Jwa</a>. All rights reserved.</Footer>
+      <Footers />
     </Layout>
 
   );
