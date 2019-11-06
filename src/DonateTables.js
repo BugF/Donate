@@ -13,23 +13,23 @@ class DonateTables extends React.Component {
     donateComponents = donateData.map(item =>  <Timeline.Item key={item.id} color= {randomColor({ luminosity: 'bright', hue: 'blue'})} ><Tooltip title={item.text} placement="topLeft" arrowPointAtCenter trigger="hover click"><strong>{item.nickname}</strong> 捐赠了 <strong>{item.value}</strong> <br /><small><TimeAgo datetime={item.date} locale='zh_CN' /></small></Tooltip> </Timeline.Item>)
 
     componentDidMount() {
-        fetch("https://api.lwl12.com/hitokoto/v1?encode=realjson")
+        fetch("https://v1.hitokoto.cn/?encode=json")
             .then(response => response.json())
-            .then(data => this.setState({ isLoaded: true, hitokotoData: data.text, hitokotoAuthor: data.author, hitokotoSource: data.source }))
+            .then(data => this.setState({ isLoaded: true, hitokotoData: data.hitokoto, hitokotoAuthor: data.from, hitokotoSource: data.creator }))
         }
     render() {
         
         const { hitokotoData, hitokotoAuthor, hitokotoSource } = this.state
         let hitokotoCombine
-        if (hitokotoAuthor || hitokotoSource){
-        hitokotoCombine = hitokotoData + " ——" + hitokotoAuthor + hitokotoSource }
+        if ( [hitokotoSource,"原创","网络","其他"].indexOf(hitokotoAuthor) !== -1 ){
+        hitokotoCombine = hitokotoData  }
         else {
-            hitokotoCombine = hitokotoData
+            hitokotoCombine = hitokotoData + " ——" + hitokotoAuthor
         }
 
         return (
             <div className="donateList">
-                <Timeline pending={hitokotoCombine} mode="alternate">
+                <Timeline key="hitokoto" pending={hitokotoCombine} mode="alternate">
                 {this.donateComponents}
                 </Timeline>
             </div>
