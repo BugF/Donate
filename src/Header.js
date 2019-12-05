@@ -32,8 +32,8 @@ function Headers() {
             <IconFont type="icon-yinlian1193427easyiconnet" /> 银联
         </NavLink>
         </Menu.Item>
-          <Menu.Item key="Union">
-          <NavLink to="/UnionPay" >
+          <Menu.Item key="BTC">
+          <NavLink to="/BTC" >
             <IconFont type="icon-bitcoin" /> BTC
             </NavLink>
         </Menu.Item>
