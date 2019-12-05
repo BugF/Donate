@@ -21,7 +21,7 @@ function App() {
               <Switch>
                 <Route path="/" exact component={Index} />
                 <Route path="/Alipay" component={AlipayPage} />
-                //<Route path="/WeChatPay" component={WeChatPay} />
+                <Route path="/WeChatPay" component={WeChatPay} />
                 <Route path="/UnionPay" component={UnionPayPage} />
                 <Route path="/BTC" component={BTCPage} />
                 <Route component={NoMatch} />
@@ -74,7 +74,7 @@ function AlipayPage() {
 }
 
 function AlipayOrder() {
-  return <Col xs={48} sm={48} md={12} lg={8} xl={8} xxl={8} >
+  return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
     <Card title="支付宝付款" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
       <QRCode renderAs="svg" size={200} value="https://qr.alipay.com/00c01809qtt0c2uxrz4qp05" /><br /><br />
       <Button type="primary" href="https://qr.alipay.com/00c01809qtt0c2uxrz4qp05" target="_blank" >点击下单</Button>
@@ -83,7 +83,7 @@ function AlipayOrder() {
 }
 
 function AlipayCoupon() {
-  return <Col xs={48} sm={48} md={12} lg={8} xl={8} xxl={8} >
+  return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
     <Card title="支付宝红包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
       <QRCode renderAs="svg" size={200} value="QUmlc1x06696td2v0womxjkz2e5eQ0" /><br />
       <Text>打开支付宝扫描上方二维码或<br />在首页搜“ <Text type="danger" strong code copyable>1380937</Text> ”领红包</Text>  </Card><br />
@@ -115,9 +115,9 @@ function UnionPayPage() {
 }
 function BTCPage() {
   return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
-    <Card title="比特币钱包地址" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
-      <QRCode renderAs="svg" size={200} value="bitcoin:3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq" /><br />
-        <Text type="danger" strong code copyable>3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq</Text><br />
+    <Card title="比特币钱包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
+      <QRCode renderAs="svg" size={200} value="bitcoin:3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq" /><br /><br />
+        <Text strong code copyable>3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq</Text><br />
     </Card><br />
   </Col>;
 }

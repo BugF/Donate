@@ -22,20 +22,20 @@ function Headers() {
             <Icon type="alipay" />支付宝
           </NavLink>
         </Menu.Item>
-//        <Menu.Item key="wechat" disabled>
-//          <NavLink to="/WeChatPay">
-//            <Icon type="wechat" /> 微信
-//              </NavLink>
-//        </Menu.Item>
         <Menu.Item key="Union">
           <NavLink to="/UnionPay" >
-            <IconFont type="icon-yinlian1193427easyiconnet" /> 银联
+            <IconFont type="icon-unionpay" /> 银联
         </NavLink>
         </Menu.Item>
           <Menu.Item key="BTC">
           <NavLink to="/BTC" >
             <IconFont type="icon-bitcoin" /> BTC
             </NavLink>
+        </Menu.Item>
+        <Menu.Item key="wechat" disabled>
+          <NavLink to="/WeChatPay">
+            <Icon type="wechat" /> 微信
+              </NavLink>
         </Menu.Item>
       </Menu>
     </Header>
