@@ -21,8 +21,9 @@ function App() {
               <Switch>
                 <Route path="/" exact component={Index} />
                 <Route path="/Alipay" component={AlipayPage} />
-                <Route path="/WeChatPay" component={WeChatPay} />
+                //<Route path="/WeChatPay" component={WeChatPay} />
                 <Route path="/UnionPay" component={UnionPayPage} />
+                <Route path="/BTC" component={BTCPage} />
                 <Route component={NoMatch} />
               </Switch>
             </Row>
@@ -46,7 +47,7 @@ class Index extends React.Component {
           <Paragraph>
             <Text>感谢您的支持。</Text>
             <ul>
-              <li>目前接受的付款方式有 支付宝，<Text delete>微信</Text>，银联云闪付</li>
+              <li>目前接受的付款方式有 支付宝，银联云闪付，BTC</li>
               <li>赞助列表将展示在此处</li>
               <li>金额小于1元人民币的交易信息将不会记录。</li>
               <li>很难准时更新，但是我会尽可能避免遗漏。</li>
@@ -121,7 +122,14 @@ function UnionPayPage() {
     <UnionPay />
   </div>;
 }
-
+function BTCPage() {
+  return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
+    <Card title="比特币钱包地址" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
+      <QRCode renderAs="svg" size={200} value="bitcoin:3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq" /><br />
+        <Text type="danger" strong code copyable>3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq</Text><br />
+    </Card><br />
+  </Col>;
+}
 function UnionPayCoupon() {
   return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
     <Card title="云闪付红包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
