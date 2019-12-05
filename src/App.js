@@ -69,22 +69,13 @@ class Index extends React.Component {
 function AlipayPage() {
   return <div id="Alipay">
     <AlipayCoupon />
-    <Alipay />
     <AlipayOrder />
   </div>;
 }
 
-function Alipay() {
-  return <Col xs={48} sm={48} md={12} lg={8} xl={8} xxl={8} >
-    <Card title="支付宝付款" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
-      <QRCode renderAs="svg" size={200} value="https://qr.alipay.com/tsx0030028m0ppqbhreqs8e" /><br /><br />
-      <Button type="primary" href="https://qr.alipay.com/tsx0030028m0ppqbhreqs8e" target="_blank" >点击付款</Button>
-    </Card><br />
-  </Col>
-}
 function AlipayOrder() {
   return <Col xs={48} sm={48} md={12} lg={8} xl={8} xxl={8} >
-    <Card title="支付宝点单" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
+    <Card title="支付宝付款" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
       <QRCode renderAs="svg" size={200} value="https://qr.alipay.com/00c01809qtt0c2uxrz4qp05" /><br /><br />
       <Button type="primary" href="https://qr.alipay.com/00c01809qtt0c2uxrz4qp05" target="_blank" >点击下单</Button>
     </Card><br />
