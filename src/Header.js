@@ -5,7 +5,7 @@ import { Layout, Menu, Icon } from 'antd';
 
 const { Header } = Layout;
 const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: 'https://at.alicdn.com/t/font_1391414_9vqulpa9ja5.js',
+  scriptUrl: 'https:////at.alicdn.com/t/font_1391414_0eg0mzkd0vgn.js',
 });
 
 function Headers() {
@@ -22,14 +22,19 @@ function Headers() {
             <Icon type="alipay" />支付宝
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="wechat" disabled>
-          <NavLink to="/WeChatPay">
-            <Icon type="wechat" /> 微信
-              </NavLink>
-        </Menu.Item>
+//        <Menu.Item key="wechat" disabled>
+//          <NavLink to="/WeChatPay">
+//            <Icon type="wechat" /> 微信
+//              </NavLink>
+//        </Menu.Item>
         <Menu.Item key="Union">
           <NavLink to="/UnionPay" >
             <IconFont type="icon-yinlian1193427easyiconnet" /> 银联
+        </NavLink>
+        </Menu.Item>
+          <Menu.Item key="Union">
+          <NavLink to="/UnionPay" >
+            <IconFont type="icon-bitcoin" /> BTC
             </NavLink>
         </Menu.Item>
       </Menu>
