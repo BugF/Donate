@@ -5,7 +5,7 @@ import { Layout, Menu, Icon } from 'antd';
 
 const { Header } = Layout;
 const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: 'https:////at.alicdn.com/t/font_1391414_0eg0mzkd0vgn.js',
+  scriptUrl: 'https://at.alicdn.com/t/font_1391414_0eg0mzkd0vgn.js',
 });
 
 function Headers() {
