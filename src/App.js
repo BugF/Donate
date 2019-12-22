@@ -24,6 +24,7 @@ function App() {
                 <Route path="/WeChatPay" component={WeChatPay} />
                 <Route path="/UnionPay" component={UnionPayPage} />
                 <Route path="/BTC" component={BTCPage} />
+                <Route path="/USDT" component={USDTPage} />
                 <Route component={NoMatch} />
               </Switch>
             </Row>
@@ -47,7 +48,7 @@ class Index extends React.Component {
           <Paragraph>
             <Text>感谢您的支持。</Text>
             <ul>
-              <li>目前接受的付款方式有 支付宝，银联云闪付，BTC</li>
+              <li>目前接受的付款方式有 支付宝，银联云闪付，BTC，USDT</li>
               <li>赞助列表将展示在此处</li>
               <li>金额小于1元人民币的交易信息将不会记录。</li>
               <li>很难准时更新，但是我会尽可能避免遗漏。</li>
@@ -115,12 +116,22 @@ function UnionPayPage() {
 }
 function BTCPage() {
   return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
-    <Card title="比特币钱包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
-      <QRCode renderAs="svg" size={200} value="bitcoin:3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq" /><br /><br />
-        <Text strong code copyable>3Dip7byb1w3fmowsmoR7nswukF8TJJR5Yq</Text><br />
+    <Card title="BTC 钱包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
+      <QRCode renderAs="svg" size={200} value="bitcoin:Rq3j9hfzAXC7F4Ku47E7kt7sZXYWhqqV" /><br /><br />
+        <Text strong code copyable>Rq3j9hfzAXC7F4Ku47E7kt7sZXYWhqqV</Text><br />
     </Card><br />
   </Col>;
 }
+
+function USDTPage() {
+  return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
+    <Card title="USDT 钱包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
+      <QRCode renderAs="svg" size={200} value="1AzxgSCYv1ohG4nUw2quSbfnb9R3Zp6uWH" /><br /><br />
+        <Text strong code copyable>1AzxgSCYv1ohG4nUw2quSbfnb9R3Zp6uWH</Text><br />
+    </Card><br />
+  </Col>;
+}
+
 function UnionPayCoupon() {
   return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
     <Card title="云闪付红包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">

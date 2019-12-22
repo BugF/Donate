@@ -5,13 +5,19 @@ import { Layout, Menu, Icon } from 'antd';
 
 const { Header } = Layout;
 const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: 'https://at.alicdn.com/t/font_1391414_0eg0mzkd0vgn.js',
+  scriptUrl: 'https://at.alicdn.com/t/font_1391414_7sszpif7ro.js',
 });
 
-function Headers() {
-  return (
+class Headers extends React.Component {
+
+  render(){ 
+    const { SubMenu } = Menu;
+
+      function handleClick(e) {
+      }
+    return (
     <Header className="header" style={{ padding: "0px", height: "64px", lineHeight: "64px" }}>
-      <Menu theme="light" mode="horizontal" style={{ lineHeight: "64px" }} className="icons-list">
+      <Menu theme="light" mode="horizontal" style={{ lineHeight: "64px" }} className="icons-list" onClick={handleClick}>
         <Menu.Item key="home">
           <NavLink to="/">
             <Icon type="home" /> 主页
@@ -27,11 +33,21 @@ function Headers() {
             <IconFont type="icon-unionpay" /> 银联
         </NavLink>
         </Menu.Item>
-          <Menu.Item key="BTC">
-          <NavLink to="/BTC" >
-            <IconFont type="icon-bitcoin" /> BTC
-            </NavLink>
-        </Menu.Item>
+        <SubMenu key="currency" title={
+          <><Icon type="link" /> 虚拟货币 </>
+        }>
+          
+        <Menu.Item key="BTC">
+      <NavLink to="/BTC" >
+        <IconFont type="icon-bitcoin" /> BTC
+        </NavLink>
+    </Menu.Item>
+    <Menu.Item key="USDT">
+      <NavLink to="/USDT" >
+        <IconFont type="icon-USDT" /> USDT
+        </NavLink>
+    </Menu.Item>
+      </SubMenu>
         <Menu.Item key="wechat" disabled>
           <NavLink to="/WeChatPay">
             <Icon type="wechat" /> 微信
@@ -40,6 +56,7 @@ function Headers() {
       </Menu>
     </Header>
   );
+  }
 }
 
 export default Headers
