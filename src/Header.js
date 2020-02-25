@@ -5,7 +5,7 @@ import { Layout, Menu, Icon } from 'antd';
 
 const { Header } = Layout;
 const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: 'https://at.alicdn.com/t/font_1391414_7sszpif7ro.js',
+  scriptUrl: '//at.alicdn.com/t/font_1391414_3pgia1sjdte.js',
 });
 
 class Headers extends React.Component {
@@ -45,6 +45,11 @@ class Headers extends React.Component {
     <Menu.Item key="USDT">
       <NavLink to="/USDT" >
         <IconFont type="icon-USDT" /> USDT
+        </NavLink>
+    </Menu.Item>
+    <Menu.Item key="DOGE">
+      <NavLink to="/DOGE" >
+        <IconFont type="icon-DOGE" /> DOGE
         </NavLink>
     </Menu.Item>
       </SubMenu>

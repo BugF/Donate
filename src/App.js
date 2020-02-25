@@ -25,6 +25,7 @@ function App() {
                 <Route path="/UnionPay" component={UnionPayPage} />
                 <Route path="/BTC" component={BTCPage} />
                 <Route path="/USDT" component={USDTPage} />
+                <Route path="/DOGE" component={DOGEPage} />
                 <Route component={NoMatch} />
               </Switch>
             </Row>
@@ -48,7 +49,7 @@ class Index extends React.Component {
           <Paragraph>
             <Text>感谢您的支持。</Text>
             <ul>
-              <li>目前接受的付款方式有 支付宝，银联云闪付，BTC，USDT</li>
+              <li>目前接受的付款方式有 支付宝，银联云闪付，BTC，USDT，DOGE</li>
               <li>赞助列表将展示在此处</li>
               <li>金额小于1元人民币的交易信息将不会记录。</li>
               <li>很难准时更新，但是我会尽可能避免遗漏。</li>
@@ -128,6 +129,15 @@ function USDTPage() {
     <Card title="USDT 钱包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
       <QRCode renderAs="svg" size={200} value="1AzxgSCYv1ohG4nUw2quSbfnb9R3Zp6uWH" /><br /><br />
         <Text strong code copyable>1AzxgSCYv1ohG4nUw2quSbfnb9R3Zp6uWH</Text><br />
+    </Card><br />
+  </Col>;
+}
+
+function DOGEPage() {
+  return <Col xs={48} sm={48} md={12} lg={12} xl={12} xxl={12}>
+    <Card title="DOGE 钱包" hoverable headStyle={{ fontSize: 20 }} bodyStyle={{ fontSize: 16 }} align="center">
+      <QRCode renderAs="svg" size={200} value="DKjkH4Ap4xakvZ66ypZoSrRayv3WQhLXbU" /><br /><br />
+        <Text strong code copyable>DKjkH4Ap4xakvZ66ypZoSrRayv3WQhLXbU</Text><br />
     </Card><br />
   </Col>;
 }
