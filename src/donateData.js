@@ -125,6 +125,18 @@ const donateData = [
         value: '12',
         date: '2020-02-25',
         text: '111'
+    },
+    {
+        key: '19',
+        nickname: '*俊浩',
+        value: '10',
+        date: '2020-02-25'
+    },
+    {
+        key: '20',
+        nickname: '爬爬',
+        value: '100',
+        date: '2020-02-25'
     }
 
 
