@@ -141,8 +141,7 @@ const donateData = [
         key: '21',
         nickname: 'PICHA',
         value: '10 CNY',
-        date: '2020-02-25 16:22',
-        text: 'Halfjojo 没有小JJ'
+        date: '2020-02-25 16:22'
     }
 
 
