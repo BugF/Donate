@@ -147,6 +147,12 @@ const donateData = [
         nickname: 'PobJ',
         value: '50 CNY',
         date: '2020-02-25T10:32:44.538Z'
+    },{
+        key: '23',
+        nickname: '南小夕',
+        value: '50 CNY',
+        date: '2020-02-25T10:45:50.812Z',
+        text: '祝cfd一年安康'
     }
 
 
