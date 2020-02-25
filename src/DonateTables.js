@@ -29,7 +29,7 @@ class DonateTables extends React.Component {
 
         return (
             <div className="donateList">
-                <Timeline key="hitokoto" pending={hitokotoCombine} mode="alternate">
+                <Timeline key="hitokoto" pending={hitokotoCombine} mode="alternate" reverse="true">
                 {this.donateComponents}
                 </Timeline>
             </div>
