@@ -153,6 +153,21 @@ const donateData = [
         value: '50 CNY',
         date: '2020-02-25T10:45:50.812Z',
         text: '祝cfd一年安康'
+    },{
+        key: '24',
+        nickname: '*治延',
+        value: '20 CNY',
+        date: '2020-02-25T10:45:51.812Z'
+    },{
+        key: '25',
+        nickname: '*治延',
+        value: '30 CNY',
+        date: '2020-02-25T10:47:51.812Z'
+    },{
+        key: '26',
+        nickname: '*宇宸',
+        value: '100 CNY',
+        date: '2020-02-26T10:47:51.812Z'
     }
 
 
