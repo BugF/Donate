@@ -168,6 +168,11 @@ const donateData = [
         nickname: 'Yuccas',
         value: '100 CNY',
         date: '2020-02-26T10:47:51.812Z'
+    },{
+        key: '27',
+        nickname: 'KAIS',
+        value: '90 CNY',
+        date: '2020-02-27T19:36:38.976Z'
     }
 
 
