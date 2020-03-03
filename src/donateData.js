@@ -173,6 +173,12 @@ const donateData = [
         nickname: 'KAIS',
         value: '90 CNY',
         date: '2020-02-27T19:36:38.976Z'
+    },{
+        key: '28',
+        nickname: '*飘飘',
+        value: '50 CNY',
+        date: '2020-03-01T19:36:38.976Z',
+        text: '服务器岁岁有今日，年年有今朝！千万别挂！'
     }
 
 
