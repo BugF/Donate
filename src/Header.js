@@ -1,10 +1,11 @@
 import React from "react"
 // eslint-disable-next-line
 import { BrowserRouter as Link, NavLink } from "react-router-dom";
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
+import { HomeOutlined, AlipayOutlined, LinkOutlined, WechatOutlined, createFromIconfontCN } from '@ant-design/icons';
 
 const { Header } = Layout;
-const IconFont = Icon.createFromIconfontCN({
+const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_1391414_3pgia1sjdte.js',
 });
 
@@ -20,12 +21,12 @@ class Headers extends React.Component {
       <Menu theme="light" mode="horizontal" style={{ lineHeight: "64px" }} className="icons-list" onClick={handleClick}>
         <Menu.Item key="home">
           <NavLink to="/">
-            <Icon type="home" /> 主页
+            <HomeOutlined /> 主页
           </NavLink>
         </Menu.Item>
         <Menu.Item key="Alipay">
           <NavLink to="/Alipay">
-            <Icon type="alipay" />支付宝
+            <AlipayOutlined />支付宝
           </NavLink>
         </Menu.Item>
         <Menu.Item key="Union">
@@ -34,7 +35,7 @@ class Headers extends React.Component {
         </NavLink>
         </Menu.Item>
         <SubMenu key="currency" title={
-          <><Icon type="link" /> 虚拟货币 </>
+          <><LinkOutlined /> 虚拟货币 </>
         }>
           
         <Menu.Item key="BTC">
@@ -55,8 +56,8 @@ class Headers extends React.Component {
       </SubMenu>
         <Menu.Item key="wechat" disabled>
           <NavLink to="/WeChatPay">
-            <Icon type="wechat" /> 微信
-              </NavLink>
+            <WechatOutlined /> 微信
+          </NavLink>
         </Menu.Item>
       </Menu>
     </Header>
